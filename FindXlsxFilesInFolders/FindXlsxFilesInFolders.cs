@@ -32,8 +32,9 @@ namespace FindXlsxFilesInFolders
                     System.IO.DirectoryInfo rootDir = di.RootDirectory;
                     MyGetDirectories(rootDir.ToString());
                 }
-           
-                Console.WriteLine("Press any key..");
+
+                Console.WriteLine();
+                Console.WriteLine("Press any key to end the program..");
                 Console.ReadKey();
             }
             catch (Exception e)
@@ -52,7 +53,6 @@ namespace FindXlsxFilesInFolders
                 try
                 {
                     MyGetDirectories(directory);
-
                 }
                 catch (UnauthorizedAccessException)
                 {
@@ -68,8 +68,7 @@ namespace FindXlsxFilesInFolders
                     if (blnShowUnaccessFolder)
                     {
                         Console.WriteLine(e.Message.ToString());
-                    }
-                    
+                    }                
                 }
             }
 
@@ -85,6 +84,7 @@ namespace FindXlsxFilesInFolders
                 }
                 catch (UnauthorizedAccessException)
                 {
+                    //Catch UnauthorizedAccessException
                     Console.WriteLine($"Cannot access file information {file}.");
                 }
                 catch (Exception e)
