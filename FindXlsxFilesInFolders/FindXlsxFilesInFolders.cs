@@ -64,8 +64,12 @@ namespace FindXlsxFilesInFolders
                 }
                 catch (Exception e)
                 {
-                    //Catch remaining exceptions 
-                    Console.WriteLine(e.Message.ToString());
+                    //Show other folder error UnauthorizedAccessException if blnShowUnaccessFolder flag is true  
+                    if (blnShowUnaccessFolder)
+                    {
+                        Console.WriteLine(e.Message.ToString());
+                    }
+                    
                 }
             }
 
@@ -106,7 +110,7 @@ namespace FindXlsxFilesInFolders
                 Console.WriteLine();
                 Console.Write("Do you want to show un-accesible folder name(s) (y/n)?");
                 ConsoleKeyInfo x = Console.ReadKey();
-                if (x.KeyChar == 'y')
+                if (x.KeyChar == 'y' || x.KeyChar == 'Y')
                 {
                     blnShowUnaccessFolder = true;
                 }
