@@ -64,7 +64,7 @@ namespace FindXlsxFilesInFolders
                 }
                 catch (Exception e)
                 {
-                    //Show other folder error UnauthorizedAccessException if blnShowUnaccessFolder flag is true  
+                    //Show other exception error than UnauthorizedAccessException if blnShowUnaccessFolder flag is true  
                     if (blnShowUnaccessFolder)
                     {
                         Console.WriteLine(e.Message.ToString());
@@ -114,13 +114,13 @@ namespace FindXlsxFilesInFolders
                 {
                     blnShowUnaccessFolder = true;
                 }
-                //move to new line
+                //Move to new line
                 Console.WriteLine();
                 Console.WriteLine();
             }
             catch (Exception e)
             {
-                //Throw exception to main funcnction
+                //Throw exception to main function
                 throw e;
             }
         }
