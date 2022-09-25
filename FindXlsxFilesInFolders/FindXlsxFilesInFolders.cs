@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
+using System.Reflection;
 
 namespace FindXlsxFilesInFolders
 {
@@ -54,7 +53,6 @@ namespace FindXlsxFilesInFolders
                 {
                     MyGetDirectories(directory);
 
-                    //Console.WriteLine($"{directory}");
                 }
                 catch (UnauthorizedAccessException)
                 {
@@ -102,7 +100,7 @@ namespace FindXlsxFilesInFolders
                 Console.WriteLine("*        App purpose : Find all *.xlxs file in all drives            *");
                 Console.WriteLine("*        Created by  : Iqbal Reza Puteh                              *");
                 Console.WriteLine("*        Created Date: September 23rd, 2022                          *");
-                Console.WriteLine("*        Version     : 1.0.0                                         *");
+                Console.WriteLine("*        Version     : " + Assembly.GetExecutingAssembly().GetName().Version + "                                       *");
                 Console.WriteLine("*                                                                    *");
                 Console.WriteLine("**********************************************************************");
                 Console.WriteLine();
